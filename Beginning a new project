@@ -1,0 +1,14 @@
+How to start a new Project
+=>git clone url
+=>composer install
+=>npm install
+if a new table has been made, migrate the database
+Copy the .env file change the database name and the app name and the password
+=>php artisan migrate
+=>npm run dev
+=>npm run watch
+
+valet link --host domain
+valet secure - add https
+valet share - share website
+valet - list all links

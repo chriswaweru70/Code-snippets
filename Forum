@@ -1,0 +1,31 @@
+php artisan make:model Thread -mr
+r-resourceful controller
+m-migration
+how to create a database name using commands
+mysql -u root -p
+and then create database forum;
+
+
+kgakami690@gmail.com
+Kimiti690
+
+php artisan migrate everytime you add something onto the migrations
+
+
+How to create a model factory using Tinker
+ factory('App\Thread', 50)->create()
+php artisan migrate:refresh - it rolls everything back and runs the migration putting the columns names back.
+php artisan tinker
+How to name a specific name to a factory faker
+$threads = factory('App\Thread', 50)->create();
+How to create more fakers within another faked data i.e comments within blogs
+$threads->each(function($thread) { factory('App\Reply', 10)->create(['thread_id' => $thread->id]); });
+$threads->each(function($thread) {factory('App\Reply', 10)
+php artisan make:auth
+php artisan make: test ReplyTest
+php artisan make: test ReplyTest --unit
+BelongsTo eloquent relationship means that it can set a many-to-one or one-to-one connection with another model in this case an owner in reply model also belongs to a user in user model.
+How to aim a single test
+phpunit --filter test_thread_has_creator
+git config credential.helper store
+@if (auth()->check())

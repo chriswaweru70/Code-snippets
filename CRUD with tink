@@ -1,0 +1,36 @@
+>>> App\Category::create(['name'=>'The richest in Africa']) - this is create
+>>> App\Category::get()
+>>> App\Category::find(4)->update(['name'=> 'The billionaires of the world']) this is update
+>>> App\Category::find(2)->delete() this is delete
+
+When you are not using a router on a page
+
+<button @click="goToAccount($event, data.id)"></button>
+
+goToAccount: function(e, id) {
+e.preventDefault()
+
+	window.location = '/partner/management/account'
+}
+
+php artisan config:cache
+php artisan migrate:fresh --
+
+Network problems
+sudo apt-get install linux-headers-$(chris -r) build-essential git
+git clone https://github.com/lwfinger/rtwifi_new.git
+cd rtlwifi_new
+sudo make install
+sudo modprobe -r rt18723de
+sudo modprobe rt18723de
+
+
+How to run laravel echo server
+laravel-echo-server init
+Run la (list all)
+cd valet/Certificates
+pwd
+home./home/chris/.valet/Certificates/mykii-website.test.crt
+home./home/chris/.valet/Certificates/mykii-website.test.key
+Store it at laravel-echo-server.json
+Do it in the home file
