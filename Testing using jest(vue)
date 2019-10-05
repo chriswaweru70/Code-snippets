@@ -1,0 +1,36 @@
+import Vue from 'vue';
+import FancyHeading from '@/components/FancyHeading.vue';
+
+function mountComponentWithProps (Component, propsData) {
+  const Constructor = Vue.extend(Component);
+  const vm = new Constructor({
+    propsData
+  }).$mount();
+
+  return vm.$el;
+}
+
+describe('FancyHeading.vue', () => {
+  it('should be the correct color', () => {
+    const headingData = mountComponentWithProps(FancyHeading, { color: 'red' });
+    const styleData = headingData.style.getPropertyValue('color');
+
+    console.log(styleData)
+
+    expect(styleData).toEqual('blue');
+  });
+
+  it('should have the correct title', () => {
+    const headingData = mountComponentWithProps(FancyHeading, { title: 'Hello, Vue!' });
+    const titleData = headingData.textContent;
+
+    expect(titleData).toEqual('Hello, Vue!');
+  });
+});
+
+
+// We start off by importing vue and the necessary components that we want to test.
+// We use describe to encapsulate various numerous unit tests surrounding our FancyHeading component.
+// In our first assertion, It must have the correct color, we're mounting our component to a new Vue instance with mountComponentWithProps
+// We’re then able to create a variable, styleData which contains what we expect to receive from our test.
+// Finally, we assert that this is true by using expect. If we check our terminal with $ npm run test:unit --watch, we’ll see a PASS for this unit test.
