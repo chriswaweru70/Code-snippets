@@ -1,0 +1,69 @@
+Mount Method
+=> THe mount method takes the Vue component as a first argument and returns its vue instance along with some helper which is used to interact with a component instance like set props, trigger clicks
+
+Example 
+
+Home.vue
+
+<template>
+  <h1>Home</h1>
+</template>
+
+<script>
+export default {};
+</script>
+
+App.vue
+
+<template>
+  <div id="app">
+    <h1>{{msg}}</h1>
+    <Home /> //child component
+  </div>
+</template>
+
+<script>
+import Home from "./components/Home";
+export default {
+  data: function() {
+    return {
+      msg: "Hello"
+    };
+  },
+  components: {
+    Home
+  }
+};
+</script>
+
+Lets test the component now
+
+App.test.js
+
+import App from '../src/App.vue'
+import { mount } from '@vue/test-utils';
+
+describe('Testing App component', () => {
+    it('checks textcontent to Hello ', () => {
+        const wrapper = mount(App);
+        expect(wrapper.text()).toBe('Hello');
+    })
+})
+
+The test will fail
+
+But if we use shallow Mount
+
+shallowMount method
+
+The shallow Mount method also works similar to the method the main difference is shallowMethod doesn't render child components so that it allows us to test the component in isolation to make sure that the child components are not included in the test.
+
+import App from '../src/App.vue'
+import { mount, shallowMount } from '@vue/test-utils';
+
+describe('Testing App component', () => {
+    it('checks textcontent to Hello ', () => {
+        const wrapper = shallowMount(App);
+        expect(wrapper.text()).toBe('Hello');
+    })
+})
