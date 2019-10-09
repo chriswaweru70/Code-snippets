@@ -34,3 +34,12 @@ home./home/chris/.valet/Certificates/mykii-website.test.crt
 home./home/chris/.valet/Certificates/mykii-website.test.key
 Store it at laravel-echo-server.json
 Do it in the home file
+
+Jest Testing Explained
+
+describe() => is usually the name of the component you are testing
+it() => is a different test case
+
+wrapper => A wrapper is an object that contains a mounted component and methods to test the component or vnode
+
+shallowMount( ): It creates a wrapper that contains the mounted and rendered vue component. But it only mounts the one component. Here only HelloWorld component is mounted. There is another type mount( ), which does similar thing but it would also mount the child components.

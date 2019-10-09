@@ -66,4 +66,4 @@ describe('Testing App component', () => {
         const wrapper = shallowMount(App);
         expect(wrapper.text()).toBe('Hello');
     })
-})
+})                                              
