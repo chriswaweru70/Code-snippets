@@ -66,4 +66,6 @@ describe('Testing App component', () => {
         const wrapper = shallowMount(App);
         expect(wrapper.text()).toBe('Hello');
     })
-})                                              
+})          
+
+https://www.robinwieruch.de/reasons-why-i-moved-from-angular-to-react
